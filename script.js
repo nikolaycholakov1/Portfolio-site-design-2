@@ -27,7 +27,9 @@ const toolsContainer = document.querySelector(".tools-content");
 const windowButtons = {
   minimizeBtn: document.querySelector(".minimize-window"),
   expandBtn: document.querySelector(".expand-window"),
-  closeBtn: document.querySelector(".close-window"),
+  closeFrontBtn: document.querySelector(".close-frontend-window"),
+  closeBackBtn: document.querySelector(".close-backend-window"),
+  closeToolsBtn: document.querySelector(".close-tools-window"),
 };
 
 console.log(windowButtons);
@@ -44,10 +46,21 @@ backendBtn.addEventListener("click", () => {
 
 toolsBtn.addEventListener("click", () => {
   contentWindow.style.display = "block";
+  toolsContainer.style.display = "block";
 });
 
 // THREE BUTTONS
-windowButtons.closeBtn.addEventListener("click", (e) => {
+windowButtons.closeFrontBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  contentWindow.style.display = "none";
+});
+
+windowButtons.closeBackBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  contentWindow.style.display = "none";
+});
+
+windowButtons.closeToolsBtn.addEventListener("click", (e) => {
   e.preventDefault();
   contentWindow.style.display = "none";
 });
