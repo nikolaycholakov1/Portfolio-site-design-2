@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --white-text-color: #fff;
+  --black-text-color: #000;
+  --light-bg-color: #f5f2f2;
+  --dark-bg-color: rgb(121, 113, 113);
+  --highlight-blue-color: #e5f3ff;
+  --card-highlight-color: #e5f3ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 75%;
+  overflow-x: hidden;
+}
+
+.droppable {
+  margin: 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.droppable:hover {
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    inset 0px 0px 0px 4px rgba(255, 229, 191, 0);
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    inset 0px 0px 0px 4px rgba(255, 229, 191, 0);
+}
+
+/* .bin {
+  background-image: url(images/bin-icon.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.bin:hover {
+  background-image: url(images/opened-bin-icon.png);
+} */
+
+.img-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4d57ce;
+  background-image: url(images/win-xp-theme.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+/* .icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 10rem);
+  grid-template-rows: repeat(auto-fit, 10rem);
+  justify-content: center;
+  align-items: center;
+} */
+
+.icon {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.icon img {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* Page Content */
+/* Front END */
+.front-end-content {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 10%;
+  left: 10%;
+  background-color: var(--white-text-color);
+  padding: 25rem 35rem;
+  height: 70vh;
+  width: 60vw;
+  overflow: hidden;
+}
+
+.front-end-content .top-bar {
+  display: flex;
+  border-bottom: 2px solid var(--light-bg-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  align-items: center;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+/* Top Bar Menu */
+
+.front-end-content .top-bar .icon-and-title {
+  display: flex;
+  gap: 1rem;
+}
+
+.front-end-content .top-bar ul {
+  display: flex;
+}
+
+.front-end-content .top-bar li {
+  margin: 1rem 1rem;
+}
+
+.front-end-content .top-bar .controls img {
+  cursor: pointer;
+}
+
+/* Content */
+
+.front-end-content .skill-set-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Section Menu */
+
+.front-end-content .skill-set-container .menu {
+  width: 20%;
+  height: 95%;
+  border-right: 2px solid var(--light-bg-color);
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  padding: 1rem;
+}
+
+.front-end-content .skill-set-container .menu ul li {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  margin-left: 1.5rem;
+  padding: 0.2rem;
+}
+
+.front-end-content .skill-set-container .menu ul li:not(:first-child):hover {
+  cursor: pointer;
+  background-color: var(--highlight-blue-color);
+}
+
+.front-end-content .skill-set-container .menu ul li:first-child {
+  margin-left: 0.5rem;
+}
+
+.front-end-content .skill-set-container .menu ul li img {
+  margin-right: 1rem;
+}
+
+/* Right Section list */
+
+.front-end-content .skill-set-container .skills-list {
+  display: flex;
+  position: absolute;
+  gap: 4rem;
+  width: 80%;
+  height: 95%;
+  top: 2.5rem;
+  right: 0;
+  padding: 3rem;
+}
+
+.front-end-content .skill-set-container .skills-list .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+}
+
+.front-end-content .skill-set-container .skills-list .card:hover {
+  background-color: var(--card-highlight-color);
+}
+
+.front-end-content .skill-set-container .skills-list .card p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.front-end-content .skill-set-container .skills-list .card img {
+  padding: 0.5rem;
+  -webkit-box-shadow: 0px 4px 13px -7px #000000,
+    5px 5px 15px 11px rgba(166, 166, 166, 0);
+  box-shadow: 0px 4px 13px -7px #000000,
+    5px 5px 15px 11px rgba(166, 166, 166, 0);
+}
