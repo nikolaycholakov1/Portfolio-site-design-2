@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 75%;
+  overflow-x: hidden;
+}
+
+.droppable {
+  margin: 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.droppable:hover {
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    inset 0px 0px 0px 4px rgba(255, 229, 191, 0);
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    inset 0px 0px 0px 4px rgba(255, 229, 191, 0);
+}
+
+/* .bin {
+  background-image: url(images/bin-icon.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.bin:hover {
+  background-image: url(images/opened-bin-icon.png);
+} */
+
+.img-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4d57ce;
+  background-image: url(images/win-xp-theme.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+/* .icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 10rem);
+  grid-template-rows: repeat(auto-fit, 10rem);
+  justify-content: center;
+  align-items: center;
+} */
+
+.icon {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.icon img {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* Page Content */
+/* Front END */
+.front-end-content {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  background-color: lightgray;
+  padding: 25rem 35rem;
+  /* display: none; */
+  border: 1px solid red;
+}
+
+.front-end-content .top-bar {
+  display: flex;
+  z-index: 3;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 4rem;
+}
