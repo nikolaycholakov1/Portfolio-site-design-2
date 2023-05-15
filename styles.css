@@ -7,6 +7,11 @@
   --dark-bg-color: rgb(121, 113, 113);
   --highlight-blue-color: #e5f3ff;
   --card-highlight-color: #e5f3ff;
+  --taskbar-color: #252321;
+  --taskbar-highlight-color: #3a3937;
+  --search-box-color: #1968a6;
+  --search-window-border-color: #838383;
+  --taskbar-popups: #242526;
 }
 
 * {
@@ -67,6 +72,13 @@ html {
   top: 0;
   left: 0;
   display: flex;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.01) 0.1%,
+    rgba(255, 255, 255, 0.05) 33%,
+    rgba(0, 0, 0, 0) 33.1%
+  );
 }
 
 /* .icons-container {
@@ -488,4 +500,217 @@ html {
     5px 5px 15px 11px rgba(166, 166, 166, 0);
   box-shadow: 0px 4px 13px -7px #000000,
     5px 5px 15px 11px rgba(166, 166, 166, 0);
+}
+
+/* TASKBAR FOOTER*/
+.taskbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--taskbar-color);
+  color: white;
+}
+
+/* Left side menu list */
+
+.taskbar .left-side {
+  display: flex;
+}
+
+.taskbar .left-side li {
+  height: 5vh;
+  min-width: 4rem;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Windows window */
+
+.windows .windows-menu-window {
+  display: none;
+  width: 40vw;
+  height: 50vh;
+  background-color: var(--taskbar-color);
+  position: absolute;
+  top: -50vh;
+  left: 0vw;
+}
+
+.windows .windows-menu-window .windows-menu-options {
+  display: inline-flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  height: 100%;
+  width: 100%;
+}
+
+.windows .windows-menu-window .windows-menu-options .windows-buttons {
+  margin-top: 19.5rem;
+}
+
+.windows .windows-menu-window .windows-menu-options .recently-added {
+  /* background-color: red; */
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.windows .windows-menu-window .windows-menu-options .productivity {
+  /* background-color: blue; */
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Search window */
+
+.search .search-window {
+  display: none;
+  width: 40vw;
+  height: 50vh;
+  background-color: var(--taskbar-popups);
+  position: absolute;
+  border: 1px solid var(--search-window-border-color);
+  border-bottom: none;
+  top: -50vh;
+  left: 2.5vw;
+}
+
+.search .search-window .search-options .search-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+}
+
+.search .search-window .search-options .search-content section {
+  align-items: center;
+}
+.search .search-window .search-top-bar {
+  display: flex;
+  /* background-color: red; */
+  padding: 0rem 1rem;
+  border-bottom: 1px solid var(--black-text-color);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search .search-window .search-top-bar ul {
+  display: flex;
+}
+
+.left-side .search .search-box {
+  position: absolute;
+  height: 5vh;
+  width: 100%;
+  bottom: 0;
+  color: var(--black-text-color);
+  border: 2px solid var(--search-box-color);
+  background-image: url(images/search-icon.png);
+  background-repeat: no-repeat;
+  background-position: 0.5rem 1rem;
+  padding-left: 2.5vw;
+  font-size: 1.5rem;
+}
+
+/* Right Side Menu list */
+
+.right-side {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.right-side .notifications-container {
+  display: none;
+  position: absolute;
+  width: 20vw;
+  height: 95vh;
+  right: 0;
+  bottom: 5vh;
+  background-color: #242526;
+  cursor: auto;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.right-side .notifications-container .manage-notifications {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 5%;
+}
+
+.right-side .notifications-container .manage-notifications p {
+  color: #7e9fba;
+}
+
+.right-side .notifications-container .manage-notifications p:hover {
+  color: var(--white-text-color);
+}
+
+.right-side .notifications-container .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+}
+
+.right-side .notifications-container .modes {
+  height: 25%;
+}
+
+.right-side .notifications-container .modes .modes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 3rem;
+}
+
+.right-side .notifications-container .modes .modes-container div {
+  background-color: #515151;
+  padding: 1rem;
+  cursor: pointer;
+  height: 7rem;
+  width: 7rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.right-side .notifications-container .modes .modes-container div:hover {
+  box-shadow: inset 0px 0px 1px 1px #ffffff;
+}
+
+.right-side li {
+  height: 5vh;
+  min-width: 4rem;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.right-side .clock {
+  flex-direction: column;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: var(--taskbar-highlight-color);
 }
